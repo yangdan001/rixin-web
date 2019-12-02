@@ -1,0 +1,114 @@
+<template>
+  <div class="wrap">
+    <el-menu
+      default-active="1"
+      class="el-menu-vertical-demo"
+      @open="handleOpen"
+      @close="handleClose"
+      background-color="#242f42"
+      text-color="#fff"
+      active-text-color="#ffd04b"
+      unique-opened
+      router
+    >
+     <Menu :menuList="this.menuList"></Menu>
+    </el-menu>
+  </div>
+</template>    
+<script>
+import Menu from './menuList'
+export default{
+    data(){
+        return {
+          menuList:[{
+            parentId:'1',
+            order:'1',
+            name:'科室管理',
+            index:'0010',
+            idModule:'1',
+            id:'1',
+            icon:'1',
+            children:[{
+              parentId:'1',
+              order:'11',
+              name:'科室1',
+              index:'11',
+              idModule:'1',
+              id:'11',
+              icon:'1',
+              children:[{
+                parentId:'11',
+                order:'1',
+                name:'科室11',
+                index:'set',
+                idModule:'1',
+                id:'111',
+                icon:'1',
+                children:[],
+              }]
+            },{
+              parentId:'1',
+              order:'12',
+              name:'科室1',
+              index:'12',
+              idModule:'12',
+              id:'12',
+              icon:'1',
+              children:[{
+                parentId:'12',
+                order:'121',
+                name:'科室111',
+                index:'test',
+                idModule:'1',
+                id:'11133',
+                icon:'1',
+                children:[],
+              }]
+            }],
+          },{
+            parentId:'2',
+            order:'1',
+            name:'门诊',
+            index:'112121',
+            idModule:'1',
+            id:'2',
+            icon:'1',
+            children:[{
+                parentId:'2',
+                order:'22',
+                name:'门诊1',
+                index:'cart',
+                idModule:'22',
+                id:'22',
+                icon:'22',
+                children:[],
+            }],
+          },{
+              parentId:'1',
+              order:'3',
+              name:'住院',
+              index:'get',
+              idModule:'3',
+              id:'3',
+              icon:'3',
+              children:[],
+          }]
+        }
+    },
+    methods:{
+      handleOpen(key, keyPath) {
+      },
+      handleClose(key, keyPath) {
+      }
+    },
+    components:{
+      Menu,
+    }
+}
+</script> 
+<style lang="scss">
+.wrap{
+  border: 1px solid #242f42;
+  overflow: hidden;
+}
+</style>
